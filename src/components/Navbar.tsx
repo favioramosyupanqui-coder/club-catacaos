@@ -1,10 +1,19 @@
-import Link from 'next/link'; // Importa Link
+import Link from 'next/link';
+import Image from 'next/image'; // Importamos Image para mejor rendimiento
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center py-6 px-10 border-b bg-white sticky top-0 z-50">
-      {/* Envuelve el texto en el componente Link */}
-      <Link href="/" className="font-bold text-2xl text-indigo-700 tracking-tight">
+    <nav className="flex justify-between items-center py-4 px-10 border-b bg-white sticky top-0 z-50">
+      
+      <Link href="/" className="flex items-center gap-3 font-bold text-2xl text-indigo-700 tracking-tight">
+        {/* Aquí insertamos el logo */}
+        <Image 
+          src="/logo-catacaos.png" 
+          alt="Logo Club Catacaos" 
+          width={40} 
+          height={40} 
+          className="object-contain"
+        />
         Club Catacaos
       </Link>
       
