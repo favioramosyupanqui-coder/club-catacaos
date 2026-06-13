@@ -10,8 +10,8 @@ export default function Navbar() {
         <Image 
           src="/logo-catacaos.png" 
           alt="Logo Club Catacaos" 
-          width={40} 
-          height={40} 
+          width={120} 
+          height={120} 
           unoptimized
           className="object-contain"
         />
