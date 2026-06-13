@@ -8,10 +8,11 @@ export default function Navbar() {
       <Link href="/" className="flex items-center gap-3 font-bold text-2xl text-indigo-700 tracking-tight">
         {/* Aquí insertamos el logo */}
         <Image 
-          src="logo-catacaos.png" 
+          src="/logo-catacaos.png" 
           alt="Logo Club Catacaos" 
           width={40} 
           height={40} 
+          unoptimized
           className="object-contain"
         />
         Club Catacaos
