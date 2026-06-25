@@ -1,17 +1,19 @@
 import SearchAndFilter from '@/components/SearchAndFilter';
 import BusinessList from '@/components/BusinessList';
-import { supabase } from '@/lib/supabase'; // <--- ESTA ES LA LÍNEA QUE TE FALTA
+import { supabase } from '@/lib/supabase';
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ q?: string, categoria?: string }> }) {
   const { q, categoria } = await searchParams;
 
-  // Iniciamos la consulta
+  // Iniciamos la consulta filtrando solo los negocios autorizados
   let query = supabase
     .from('organizations')
     .select('*')
-    .eq('distrito_operativo', 'Catacaos'); // Asegúrate de que el nombre de columna sea correcto
+    .eq('distrito_operativo', 'Catacaos')
+    .eq('visibilidad_estado', 'publico') // Solo los autorizados en el Admin
+    .eq('active', true);               // Solo los que tienen el switch activo
 
-  // Filtros dinámicos
+  // Filtros dinámicos adicionales
   if (q) query = query.ilike('name', `%${q}%`);
   if (categoria) query = query.eq('categoria', categoria);
 

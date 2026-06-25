@@ -19,8 +19,8 @@ export default function Navbar() {
       </Link>
       
       <div className="space-x-6 flex items-center">
-        <a href="https://confiaf.com/login.php" className="text-slate-600">Iniciar Sesión</a>
-        <a href="https://confiaf.com/organization_create.php?ref=45e63436-85fb-4112-bcc0-4988ecd4c9a8" className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl">Registrar Negocio</a>
+        <a href="login" className="text-slate-600">Iniciar Sesión</a>
+        <a href="/organization_create.php?ref=45e63436-85fb-4112-bcc0-4988ecd4c9a8" className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl">Registrar Negocio</a>
       </div>
     </nav>
   );
